@@ -24,7 +24,7 @@ public class AgendaSwing extends JFrame {
     private DefaultListModel<Contato> listaModel;
     private JList<Contato> listaContatos;
     private JTextField campoNome, campoTelefone;
-    private static final String ARQUIVO = "C:\\Users\\Lucas Braga\\Documents\\GitHub\\CRUD-Java\\contatos.txt";
+    private static final String ARQUIVO = "contatos.txt";
 
     public AgendaSwing() {
         super("Agenda de Contatos");
@@ -163,12 +163,10 @@ public class AgendaSwing extends JFrame {
                         long telefone = Long.parseLong(partes[1].trim());
                         listaModel.addElement(new Contato(nome, telefone));
                     } catch (NumberFormatException e) {
-                        System.out.println("Telefone inválido na linha: " + linha);
-                        //JOptionPane.showMessageDialog(this, "Linha inválida: " + linha);
+                        JOptionPane.showMessageDialog(this, "Linha inválida: " + linha);
                     }
                 } else {
-                    System.out.println("Linha inválida: " + linha);
-                    //JOptionPane.showMessageDialog(this, "Linha inválida: " + linha);
+                    JOptionPane.showMessageDialog(this, "Linha inválida: " + linha);
                 }
             }
             JOptionPane.showMessageDialog(this, "Contatos carregados de: " + file.getAbsolutePath());
