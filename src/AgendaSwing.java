@@ -124,7 +124,7 @@ public class AgendaSwing extends JFrame {
 
         setVisible(true);
 
-        carregarContatos();
+        //carregarContatos();
     }
     
     private void salvarContatos() {
